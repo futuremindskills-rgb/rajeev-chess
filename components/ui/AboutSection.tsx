@@ -1,108 +1,153 @@
+"use client";
+
 import React from 'react';
-import { CertificateIcon}  from './BannerIcon';
+import { 
+  Trophy, 
+  Award, 
+  Target, 
+  Sparkles, 
+  ShieldCheck, 
+  Star,
+  Globe
+} from 'lucide-react';
 
 const AboutSection: React.FC = () => {
-  return (
-    <section className="py-8 md:py-14 bg-white overflow-hidden">
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
-          
-          {/* --- Left Column: Images Composition --- */}
-          <div className="w-full lg:w-1/2 relative">
-            <div className="relative w-full max-w-[550px] mx-auto lg:mx-0 h-[450px] sm:h-[500px]">
-              
-              {/* Decorative Dots Pattern (Bottom Left) */}
-              <div className="absolute -bottom-8 -left-8 w-32 h-32 opacity-20 z-0">
-                <svg width="100%" height="100%" viewBox="0 0 100 100" fill="none">
-                  <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                    <circle cx="2" cy="2" r="2" className="text-blue-600" fill="currentColor" />
-                  </pattern>
-                  <rect width="100%" height="100%" fill="url(#dots)" />
-                </svg>
-              </div>
+  const goldGradient = "from-[#bf953f] via-[#d4af37] to-[#b38728]";
 
-              {/* Image 1: Top Left (Teacher/Student) */}
-              <div className="absolute top-0 left-0 w-[70%] h-[60%] z-10">
+  return (
+    <section className="py-24 bg-white overflow-hidden font-sans">
+      <div className="max-w-[90rem] mx-auto px-4 md:px-8">
+        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+          
+          {/* --- LEFT COLUMN: PRESTIGE IMAGE COMPOSITION --- */}
+          <div className="w-full lg:w-1/2 relative">
+            <div className="relative w-full max-w-[600px] mx-auto lg:mx-0 h-[500px] md:h-[600px]">
+              
+              {/* Architectural Decorative Element */}
+              <div className="absolute -top-10 -left-10 w-40 h-40 bg-purple-50 rounded-full blur-3xl opacity-60 animate-pulse"></div>
+              
+              {/* Image 1: Main Focus (Large Portrait) */}
+              <div className="absolute top-0 right-0 w-[85%] h-[80%] z-10 group">
+                <div className="absolute -inset-1 bg-gradient-to-tr from-[#bf953f] to-transparent rounded-[3rem] opacity-20 blur group-hover:opacity-40 transition duration-1000"></div>
                 <img 
-                  src="/gallery20.jpeg" 
-                  alt="Teacher guiding student"
-                  className="w-full h-full object-cover rounded-tr-[80px] rounded-bl-[20px] rounded-tl-[20px] rounded-br-[20px] shadow-lg"
+                  src="/raj2.jpeg" 
+                  alt="Chess Focus"
+                  className="w-full h-full object-cover rounded-[3rem] shadow-2xl border border-white relative z-10"
                 />
               </div>
 
-              {/* Image 2: Bottom Right (Chess Focus) */}
-              <div className="absolute bottom-4 right-0 w-[70%] h-[60%] z-20">
-                <div className="w-full h-full p-2 bg-white rounded-tl-[80px] rounded-br-[20px] rounded-tr-[20px] rounded-bl-[20px] shadow-xl">
+              {/* Image 2: Support Shot (Small Overlay) */}
+              <div className="absolute bottom-0 left-0 w-[55%] h-[50%] z-20 group">
+                <div className="w-full h-full p-2 bg-white rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.15)] relative">
                   <img 
-                    src="/gallery19.jpeg" 
-                    alt="Focused chess game"
-                    className="w-full h-full object-cover rounded-tl-[70px] rounded-br-[15px] rounded-tr-[15px] rounded-bl-[15px]"
+                    src="/9.jpeg" 
+                    alt="Strategic Play"
+                    className="w-full h-full object-cover rounded-[2rem]"
                   />
+                
                 </div>
               </div>
 
-              {/* Floating Badge: 100% Success */}
-              <div className="absolute bottom-16 -left-4 sm:left-4 z-30 bg-white p-4 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] flex items-center gap-4 animate-bounce-slow">
-                <div className="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center text-white shrink-0">
-                  <CertificateIcon className="w-7 h-7" strokeWidth={2} />
-                </div>
-                <div>
-                  <div className="text-2xl font-extrabold text-[#1a1a4b]">100%</div>
-                  <div className="text-sm font-medium text-gray-500">Success Rate</div>
-                </div>
-              </div>
+         
 
             </div>
           </div>
 
-          {/* --- Right Column: Text Content --- */}
-          <div className="w-full lg:w-1/2">
+          {/* --- RIGHT COLUMN: ACADEMY LEGACY CONTENT --- */}
+          <div className="w-full lg:w-1/2 space-y-8">
             
-            {/* Pill Label */}
-            <span className="inline-block px-4 py-1.5 mb-6 text-sm font-semibold text-blue-600 bg-blue-50 rounded-full">
-              Get More About Us
-            </span>
+            <div className="space-y-4">
+              <div className="flex items-center gap-2 text-[#bf953f] font-black uppercase tracking-[0.3em] text-xs">
+                <Sparkles size={16} />
+                Legacy of Excellence
+              </div>
 
-            {/* Heading */}
-            <h2 className="text-3xl md:text-5xl font-bold text-[#1a1a4b] mb-6 leading-tight">
-              About Checkmate Sensei <span className="relative inline-block px-3 py-1 mt-2 md:mt-0">
-                <span className="absolute inset-0 bg-yellow-400 rounded-lg transform -rotate-2"></span>
-                <span className="relative text-white z-10">Chess</span>
-              </span>
-            </h2>
+              <h2 className="text-3xl md:text-5xl font-black text-slate-900 leading-[0.95] tracking-tight uppercase italic">
+                Strategic Mastery <br />
+                <span className={`text-transparent bg-clip-text bg-gradient-to-r ${goldGradient}`}>Since 2006</span>
+              </h2>
 
-            {/* Description Text */}
-            <div className="space-y-4 text-gray-600 text-lg leading-relaxed mb-8">
-              <p>
-                At our core, we believe that chess is more than just a game—it's a powerful tool for building confidence, sharpening strategic thinking, and fostering a lifelong love of learning. We are dedicated to providing a supportive and engaging online environment where young minds can thrive.
-              </p>
-              <p>
-                Led by a team of passionate instructors, we offer expert-level coaching for students of all skill levels. Our curriculum is designed to not only teach the fundamentals but also to inspire creativity and critical thinking on the chessboard and beyond.
+              <p className="text-slate-600 text-lg md:text-xl font-medium leading-relaxed italic">
+                "We don't just teach the game; we cultivate the discipline of a Grandmaster. At 
+                <span className="text-[#4c1d95] font-bold"> Rajeev International</span>, 18+ years of legacy 
+                meets international FIDE standards."
               </p>
             </div>
 
-            {/* Profile Section */}
-            <div className="flex items-center gap-4 mt-8 pt-8 border-t border-gray-100">
-              <img 
-                src="/gallery21.jpeg" 
-                alt="CEO Portrait"
-                className="w-16 h-16 rounded-full object-cover shadow-md border-2 border-white ring-2 ring-gray-100"
-              />
-              <div>
-                <p className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-1">
-                  Founder & CEO, 15 Years of Experience
+            {/* Resume-Based Stat Grid */}
+            <div className="grid grid-cols-2 gap-4 py-4 border-y border-slate-100">
+               <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-[#4c1d95]">
+                    <Globe size={20} />
+                  </div>
+                  <div>
+                    <p className="text-xs font-black text-slate-400 uppercase">FIDE Rating</p>
+                    <p className="text-lg font-black text-slate-900 leading-none">1829 ELO</p>
+                  </div>
+               </div>
+               <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center text-[#bf953f]">
+                    <Trophy size={20} />
+                  </div>
+                  <div>
+                    <p className="text-xs font-black text-slate-400 uppercase">Experience</p>
+                    <p className="text-lg font-black text-slate-900 leading-none">18+ Years</p>
+                  </div>
+               </div>
+            </div>
+
+            <div className="space-y-4 text-slate-500 text-base md:text-lg font-medium">
+              <p>
+                Led by National Instructor <strong>Mandula Rajeev</strong>, our academy is the official coaching partner for premier institutions like <strong>Andhra Loyola College</strong> and <strong>Delhi Public School</strong>.
+              </p>
+              <p>
+                Having directed over 1,000 tournaments as a FIDE Arbiter, Coach Rajeev provides students with unique tactical insights and tournament psychology that you won't find in standard coaching programs.
+              </p>
+            </div>
+
+            {/* Founder Profile - Detailed and Prestigious */}
+            <div className="flex items-center gap-5 p-6 rounded-[2.5rem] bg-slate-50 border border-slate-100 group hover:bg-white hover:shadow-xl transition-all duration-500">
+              <div className="relative">
+                <div className="absolute inset-0 bg-[#bf953f] rounded-full scale-110 opacity-0 group-hover:opacity-20 transition-opacity"></div>
+                <img 
+                  src="/gallery21.jpeg" 
+                  alt="Mandula Rajeev"
+                  className="w-20 h-20 rounded-full object-cover border-4 border-white shadow-md relative z-10 grayscale group-hover:grayscale-0 transition-all"
+                />
+              </div>
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-1">
+                  <h4 className="text-xl font-black text-slate-900 uppercase italic tracking-tighter">
+                    Mandula Rajeev
+                  </h4>
+                  <div className="flex text-[#bf953f]">
+                    <Star size={12} fill="currentColor" />
+                    <Star size={12} fill="currentColor" />
+                    <Star size={12} fill="currentColor" />
+                  </div>
+                </div>
+                <p className="text-[10px] font-black text-[#4c1d95] uppercase tracking-widest mb-1">
+                  National Instructor & Joint Sec. Andhra Chess Assoc.
                 </p>
-                <h4 className="text-xl font-bold text-[#1a1a4b]">
-                  Vivek Singh
-                </h4>
-                <p className="text-sm text-gray-400">From India</p>
+                <div className="flex items-center gap-3">
+                   <span className="text-[10px] font-bold text-slate-400 uppercase">FIDE ID: 46600507</span>
+                   <div className="w-1 h-1 rounded-full bg-slate-300"></div>
+                   <span className="text-[10px] font-bold text-slate-400 uppercase">Vijayawada, India</span>
+                </div>
               </div>
             </div>
 
           </div>
-
         </div>
       </div>
+
+      <style jsx global>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+        }
+        .animate-float { animation: float 5s ease-in-out infinite; }
+      `}</style>
     </section>
   );
 };

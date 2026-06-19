@@ -127,7 +127,7 @@ export default function CoursesSection() {
 
               {/* --- Action Button (Bottom) --- */}
               <div className="mt-10">
-                <Link href="https://wa.me/+918130627389" target="_blank">
+                <Link href="https://wa.me/+919030308811" target="_blank">
                     <button className="w-full bg-[#5C4EE5] cursor-pointer  hover:bg-[#4a3ec2] text-white font-bold py-3.5 px-6 rounded-lg transition-colors shadow-lg shadow-indigo-100">
                     Register Now
                     </button>
@@ -155,13 +155,7 @@ export default function CoursesSection() {
         </a>
       </div> */}
 
-      {/* Scroll to Top (Bottom Right) */}
-      <button 
-        onClick={scrollToTop}
-        className="fixed bottom-6 right-6 z-50 w-10 h-10 bg-[#5C4EE5] hover:bg-[#4a3ec2] rounded-full flex items-center justify-center shadow-lg transition-transform hover:-translate-y-1"
-      >
-        <ArrowUp className="w-5 h-5 text-white" strokeWidth={2.5} />
-      </button>
+  
 
     </section>
   );

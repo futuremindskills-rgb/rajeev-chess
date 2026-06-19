@@ -5,128 +5,141 @@ import {
   ArrowRight, 
   Trophy, 
   Star, 
-  Users, 
-  Clock,
-  ShieldCheck,
-  Crown
+  Globe,
+  Medal,
+  Crown,
+  BookOpen,
+  Award,
+  Users
 } from "lucide-react";
-// 1. Import the global hook
 import { useDemoModal } from "@/context/DemoContext";
 
 export default function HeroSection() {
   const [mounted, setMounted] = useState(false);
-  
-  // 2. Initialize the modal trigger
   const { openDemoModal } = useDemoModal();
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
+  const goldGradient = "from-[#bf953f] via-[#d4af37] to-[#b38728]";
+  const purpleGradient = "from-[#2e1065] to-[#4c1d95]";
+
   return (
-    <section className="relative min-h-screen bg-slate-50 flex items-center pt-28 pb-16 lg:pt-32 lg:pb-32 overflow-hidden font-sans">
+    <section className="relative min-h-screen bg-[#fafafa] flex items-center pt-12 pb-16 lg:pt-25 lg:pb-12 overflow-hidden font-sans">
       
-      {/* BACKGROUND ELEMENTS */}
-      <div className="absolute inset-0 z-0 opacity-[0.03]" 
-           style={{ backgroundImage: 'radial-gradient(#4f46e5 1px, transparent 1px)', backgroundSize: '32px 32px' }}>
+      {/* --- ELITE BACKGROUND ELEMENTS --- */}
+      <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
+           style={{ backgroundImage: 'radial-gradient(#4c1d95 1px, transparent 1px)', backgroundSize: '45px 45px' }}>
       </div>
 
-      <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-indigo-200/40 rounded-full blur-3xl filter opacity-50 pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[250px] md:w-[500px] h-[250px] md:h-[500px] bg-teal-200/40 rounded-full blur-3xl filter opacity-50 pointer-events-none"></div>
+      <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[700px] h-[700px] bg-purple-100/50 rounded-full blur-[140px] filter opacity-70 pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[600px] h-[600px] bg-amber-50/60 rounded-full blur-[120px] filter opacity-70 pointer-events-none"></div>
 
-      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl relative z-10">
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+      <div className={`container mx-auto px-4 md:px-8 max-w-[90rem] relative z-10 transition-all duration-1000 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+        
+        {/* --- TOP BRANDING BADGE --- */}
+        <div className="flex justify-center lg:justify-start mb-8">
+          <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white border border-purple-100 shadow-xl shadow-purple-900/5 text-purple-900 font-bold text-xs md:text-sm tracking-wide">
+            <div className="flex items-center gap-1.5 border-r border-purple-100 pr-3 mr-1">
+              <Globe size={16} className="text-purple-600" />
+              <span>FIDE ID: 46600507</span>
+            </div>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-800 to-amber-600">
+              International Rated Player (1829)
+            </span>
+          </div>
+        </div>
+
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           
-          <div className={`lg:col-span-6 space-y-6 lg:space-y-8 transition-all duration-1000 transform text-center lg:text-left ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+          {/* --- LEFT CONTENT: THE ACADEMY PROFILE --- */}
+          <div className="lg:col-span-7 space-y-8 text-center lg:text-left">
             
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-white border border-indigo-100 shadow-sm text-indigo-900 font-medium text-xs md:text-sm mb-2 mx-auto lg:mx-0">
-              <span className="relative flex h-2.5 w-2.5 md:h-3 md:w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 md:h-3 md:w-3 bg-indigo-500"></span>
-              </span>
-              New batch starting this weekend!
+            <div className="space-y-4">
+               <h2 className="text-purple-700 font-black tracking-[0.2em] uppercase text-sm md:text-base">
+                 Led by National Instructor Mandula Rajeev
+               </h2>
+               <h1 className="text-3xl sm:text-5xl lg:text-4rem] font-black text-slate-900 leading-[0.95] tracking-tight">
+                 Elevate Your Game with <br/>
+                 <span className={`text-transparent bg-clip-text bg-gradient-to-r ${goldGradient}`}>World Class</span> Coaching
+               </h1>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-[4rem] leading-[1.1] font-display font-bold text-slate-900 tracking-tight">
-              Turn your little <br/>
-              thinker into a <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 relative inline-block">
-                Grandmaster
-                <svg className="absolute w-full h-2 md:h-3 -bottom-1 left-0 text-yellow-400/80 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none">
-                   <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" />
-                </svg>
-              </span>
-            </h1>
+            <p className="text-slate-600 text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 font-medium leading-relaxed">
+              Founded by a <span className="text-purple-800 font-bold">FIDE Arbiter</span> & <span className="text-purple-800 font-bold">National Instructor</span> with 18+ years of legacy coaching at Andhra Loyola, DPS, and 1000+ tournaments.
+            </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+            {/* STRATEGIC STATS GRID */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-2">
                {[
-                 { icon: Trophy, text: "FIDE Rated Trainers" },
-                 { icon: Clock, text: "Flexible Schedules" },
-                 { icon: ShieldCheck, text: "Beginner Friendly" },
-                 { icon: Users, text: "Small Batch Size" },
-               ].map((item, idx) => (
-                 <div key={idx} className="flex items-center gap-3 text-slate-700 font-medium text-sm md:text-base justify-center lg:justify-start">
-                   <div className="w-8 h-8 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 shrink-0">
-                      <item.icon size={16} strokeWidth={2.5} />
-                   </div>
-                   {item.text}
+                 { label: "Experience", val: "18+ Yrs", icon: Award },
+                 { label: "Tournaments", val: "1000+", icon: Trophy },
+                 { label: "Title", val: "NI '22", icon: Crown },
+                 { label: "Schools", val: "15+", icon: BookOpen },
+               ].map((stat, idx) => (
+                 <div key={idx} className="flex flex-col items-center lg:items-start p-4 rounded-3xl bg-white border border-purple-50 shadow-sm hover:shadow-md transition-shadow">
+                   <stat.icon size={20} className="text-amber-500 mb-2" />
+                   <span className="text-2xl font-black text-slate-900">{stat.val}</span>
+                   <span className="text-[10px] uppercase tracking-wider font-bold text-slate-400">{stat.label}</span>
                  </div>
                ))}
             </div>
 
-            {/* CTA BUTTON UPDATED: Removed Link, Added onClick */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-2 md:pt-4 justify-center lg:justify-start">
+            {/* CTA ACTION BLOCK */}
+            <div className="flex flex-col sm:flex-row gap-5 pt-6 justify-center lg:justify-start">
               <button 
                 onClick={openDemoModal}
-                className="w-full sm:w-auto group relative px-8 py-4 bg-slate-900 text-white rounded-2xl font-bold text-lg shadow-xl shadow-indigo-900/20 hover:shadow-2xl hover:shadow-indigo-900/40 hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+                className={`group relative px-12 py-6 rounded-2xl font-black text-lg tracking-widest uppercase transition-all duration-300 shadow-2xl shadow-purple-200 hover:shadow-purple-400 hover:-translate-y-1 bg-gradient-to-r ${purpleGradient} text-white flex items-center justify-center gap-3`}
               >
-                <span className="relative z-10 flex items-center justify-center gap-2">
-                  Book Free Trial Class
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-violet-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                Join the Academy
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
               </button>
+              
+              <a href="/curriculum" className="px-10 py-6 rounded-2xl font-black text-purple-900 bg-white border-2 border-purple-100 hover:border-purple-200 hover:bg-purple-50 transition-all text-lg shadow-sm flex items-center justify-center">
+                Our Achievement
+              </a>
             </div>
 
-            <div className="flex items-center gap-4 pt-2 justify-center lg:justify-start">
-               <div className="flex -space-x-3">
-                 {[1,2,3,4].map(i => (
-                   <img key={i} src={`https://i.pravatar.cc/100?u=chess${i}`} alt="user" className="w-10 h-10 rounded-full border-2 border-white" />
-                 ))}
+            {/* INSTITUTIONAL TRUST MARQUEE TEXT */}
+            <div className="pt-8 border-t border-slate-200/60">
+               <p className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 mb-4">Official Coach For Premier Institutions</p>
+               <div className="flex flex-wrap justify-center lg:justify-start gap-x-8 gap-y-4 opacity-60 grayscale hover:grayscale-0 transition-all">
+                  <span className="font-black text-slate-900 text-sm italic">Andhra Loyola</span>
+                  <span className="font-black text-slate-900 text-sm italic">Delhi Public School</span>
+                  <span className="font-black text-slate-900 text-sm italic">NTR Health University</span>
+                  <span className="font-black text-slate-900 text-sm italic">St. Johns Schools</span>
                </div>
-               <div className="text-sm text-left">
-                 <div className="flex text-yellow-500 mb-0.5">
-                   {[1,2,3,4,5].map(i => <Star key={i} size={14} fill="currentColor" />)}
+            </div>
+          </div>
+
+          {/* --- RIGHT CONTENT: PRESTIGE VISUALS --- */}
+          <div className={`lg:col-span-5 relative mt-12  lg:mt-0 transition-all duration-1000 delay-300 ${mounted ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}`}>
+            
+            <div className="relative z-20">
+              {/* Outer Golden Aura */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-amber-200 via-purple-100 to-amber-200 rounded-[4rem] opacity-30 blur-2xl animate-pulse"></div>
+              
+              <div className="relative bottom-20 bg-white p-4 rounded-[4rem] shadow-[0_50px_100px_rgba(76,29,149,0.1)] border border-white overflow-hidden group">
+                 <div className="relative h-[400px] sm:h-[450px] w-full rounded-[3.2rem] overflow-hidden">
+                    <img 
+                      src="20.jpeg" 
+                      alt="Mandula Rajeev Chess Academy"
+                      className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-[2s]"
+                    />
+                    {/* Artistic Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#2e1065]/60 via-transparent to-transparent"></div>
                  </div>
-                 <p className="text-slate-600 font-medium"><span className="text-slate-900 font-bold">4.9/5</span> from 2,000+ parents</p>
-               </div>
+
+                 {/* FLOATING ACHIEVEMENT CARDS */}
+
+              </div>
             </div>
 
+            {/* Decorative Element: Rotating Background Sqaure */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[115%] h-[105%] border-2 border-purple-100/50 rounded-[5rem] rotate-6 -z-10 animate-[spin_20s_linear_infinite]"></div>
           </div>
 
-          <div className={`lg:col-span-6 relative mt-8 lg:mt-0 transition-all duration-1000 delay-300 transform ${mounted ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
-            <div className="relative z-20 bg-white p-2 md:p-3 rounded-[2rem] md:rounded-[2.5rem] shadow-2xl shadow-slate-200/50 border border-slate-100 max-w-[550px] mx-auto rotate-1 hover:rotate-0 transition-transform duration-500">
-               <div className="relative h-[350px] sm:h-[450px] lg:h-[500px] w-full rounded-[1.5rem] md:rounded-[2rem] overflow-hidden">
-                  <img 
-                    src="9.jpeg" 
-                    alt="Happy kid playing chess"
-                    className="object-cover w-full h-full"
-                  />
-                  <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-black/60 to-transparent"></div>
-               </div>
-
-               <div className="absolute right-2 top-4 md:-right-6 md:top-6 bg-white p-3 md:p-4 rounded-xl md:rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-50 flex items-center gap-3 animate-float max-w-[180px] md:max-w-[220px]">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-yellow-100 rounded-full flex items-center justify-center shrink-0">
-                     <Crown className="text-yellow-600 fill-yellow-600" size={20} />
-                  </div>
-                  <div>
-                     <p className="text-[10px] md:text-xs text-slate-500 font-semibold uppercase tracking-wider">Achievement</p>
-                     <p className="text-xs md:text-sm font-bold text-slate-900">National Winner</p>
-                  </div>
-               </div>
-            </div>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[105%] h-[90%] border-2 border-dashed border-indigo-200 rounded-[2.5rem] md:rounded-[3rem] -rotate-2 -z-10"></div>
-          </div>
         </div>
       </div>
     </section>

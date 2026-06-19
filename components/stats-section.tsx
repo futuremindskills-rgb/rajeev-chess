@@ -1,34 +1,41 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 import { 
-  ChevronRight, 
-  MessageCircle, 
-  ChevronDown 
+  ChevronUp,
+  Sparkles,
+  Trophy,
+  Globe,
+  Award,
+  ArrowUp,
+  MessageSquare
 } from "lucide-react";
 
-// --- FAQ Data ---
 const faqData = [
   {
-    question: "Why online chess is better?",
+    question: "Who will be the lead coach?",
     answer:
-      "Online chess offers accessibility from anywhere, flexibility in scheduling, instant analysis tools, and the ability to play against opponents globally without travel costs.",
+      "All elite batches are led by Mandula Rajeev personally. He is an International Rated Player (FIDE ID: 46600507) with a peak rating of 1829 and holds the 'National Instructor' title awarded in 2022.",
   },
   {
-    question: "What is the right age to start?",
+    question: "What makes Rajeev International Chess Club unique?",
     answer:
-      "5 to 7 years old is considered the ideal age to start. Chess helps young children develop concentration, pattern recognition, and patience early in their development.",
+      "We bring 18+ years of legacy coaching from top institutions like Andhra Loyola and DPS. As the Joint Secretary of the Andhra Chess Association, Coach Rajeev provides students with exclusive tournament pathways.",
   },
   {
-    question: "Why Checkmate Sensei Academy?",
+    question: "Is there a certificate provided?",
     answer:
-      "We offer FIDE-rated trainers, a structured curriculum, regular tournaments, and a fun, interactive learning environment tailored specifically for children.",
+      "Yes. Every student receives a certificate of completion for their specific level (Beginner to Master) signed by our FIDE National Instructor.",
   },
   {
-    question: "Do we get a completion certificate?",
+    question: "What is the ideal age to start?",
     answer:
-      "Yes, every student receives a certificate of completion upon finishing their specific level and passing the assessment.",
+      "Ages 5 to 7 is the golden window. Chess at this stage significantly boosts concentration, logical reasoning, and academic performance in school.",
+  },
+  {
+    question: "Will the coach guide in tournaments?",
+    answer:
+      "Absolutely. Having directed 1000+ tournaments, Coach Rajeev provides 'Arbiter-level' insights into rules, clock management, and tournament psychology.",
   },
 ];
 
@@ -44,124 +51,132 @@ export default function FaqSection() {
   };
 
   return (
-    <section className="relative min-h-screen bg-white py-12 lg:py-24 font-sans overflow-hidden">
+    <section className="relative bg-[#fafafa] py-24 overflow-hidden">
       
-      {/* --- Abstract Floating Dot (Top Center) --- */}
-      <div className="absolute top-4 left-1/2 -translate-x-1/2 w-3 h-3 bg-[#5C4EE5] rounded-full opacity-80" />
+      {/* Background Decor */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-100/30 rounded-full blur-[120px] -z-10" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-amber-100/30 rounded-full blur-[100px] -z-10" />
 
-      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <div className="container mx-auto px-4 md:px-8 max-w-[90rem] relative z-10">
+        
+        {/* --- 1. CENTERED HEADING --- */}
+        <div className="max-w-4xl mx-auto text-center mb-20 space-y-4">
+          <div className="flex items-center justify-center gap-2 text-[#bf953f] font-black uppercase tracking-[0.3em] text-xs">
+            <Sparkles size={16} />
+            Academy Support
+          </div>
+          <h2 className="text-4xl md:text-6xl font-black text-slate-900 leading-tight">
+            Frequently Asked <span className="text-[#4c1d95]">Questions</span>
+          </h2>
+          <p className="text-slate-500 text-lg md:text-xl font-medium max-w-2xl mx-auto">
+            Find answers to common queries about our FIDE-certified coaching levels, 
+            tournament participation, and club membership.
+          </p>
+        </div>
+
+        {/* --- 2. GRID: QUESTIONS (LEFT) | IMAGE (RIGHT) --- */}
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
-          {/* --- LEFT COLUMN: FAQ Content --- */}
-          {/* Mobile: Order 2 (Bottom), Desktop: Order 1 (Left) */}
-          <div className="order-2 lg:order-1">
-            
-            {/* Badge */}
-            <div className="inline-block px-4 py-1.5 rounded-full bg-[#F3F0FF] mb-4 lg:mb-6">
-              <span className="text-[#5C4EE5] font-semibold text-xs md:text-sm uppercase tracking-wider">FAQ's</span>
-            </div>
-
-            {/* Title */}
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#0F172A] mb-8 lg:mb-10 leading-tight">
-              Frequently Asked <br className="hidden md:block"/> Questions
-            </h2>
-
-            {/* Accordion Items */}
-            <div className="space-y-3 lg:space-y-4">
-              {faqData.map((item, index) => (
-                <div 
-                  key={index} 
-                  className="bg-[#F8F9FA] rounded-xl lg:rounded-2xl overflow-hidden transition-all duration-300 border border-transparent hover:border-gray-200"
+          {/* LEFT: Accordion Questions */}
+          <div className="lg:col-span-7 space-y-4">
+            {faqData.map((item, index) => (
+              <div 
+                key={index} 
+                className={`rounded-[2rem] transition-all duration-500 border ${
+                  openIndex === index 
+                    ? "bg-white border-purple-100 shadow-[0_30px_60px_rgba(76,29,149,0.06)]" 
+                    : "bg-white/50 border-slate-200 hover:border-purple-200"
+                }`}
+              >
+                <button
+                  onClick={() => toggleAccordion(index)}
+                  className="w-full flex items-center justify-between p-6 md:p-8 text-left focus:outline-none"
                 >
-                  <button
-                    onClick={() => toggleAccordion(index)}
-                    className="w-full flex items-center justify-between p-4 md:p-6 text-left focus:outline-none group select-none"
-                  >
-                    <span className={`text-[#0F172A] font-bold text-sm md:text-lg pr-4 transition-colors ${openIndex === index ? 'text-[#5C4EE5]' : ''}`}>
+                  <div className="flex items-center gap-5">
+                    <span className={`flex-shrink-0 w-10 h-10 rounded-2xl flex items-center justify-center text-sm font-black transition-all ${
+                      openIndex === index ? 'bg-[#4c1d95] text-white rotate-6' : 'bg-slate-100 text-slate-400'
+                    }`}>
+                      0{index + 1}
+                    </span>
+                    <span className={`font-black text-lg md:text-xl transition-colors duration-300 ${
+                      openIndex === index ? 'text-[#4c1d95]' : 'text-slate-700'
+                    }`}>
                       {item.question}
                     </span>
-                    <div className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-transform duration-300 bg-white shadow-sm ${openIndex === index ? 'rotate-90 bg-[#5C4EE5] text-white' : 'rotate-0 text-[#0F172A]'}`}>
-                      <ChevronRight className="w-4 h-4 md:w-5 md:h-5" strokeWidth={3} />
-                    </div>
-                  </button>
+                  </div>
                   
-                  {/* Answer */}
-                  <div 
-                    className={`px-4 md:px-6 transition-[max-height,opacity,padding] duration-500 ease-in-out overflow-hidden ${
-                      openIndex === index 
-                        ? "max-h-[500px] pb-4 md:pb-6 opacity-100" // Increased max-h for mobile wrapping
-                        : "max-h-0 opacity-0"
-                    }`}
-                  >
-                    <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                  <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-500 ${
+                    openIndex === index 
+                      ? 'bg-[#4c1d95] text-white rotate-180' 
+                      : 'bg-slate-200 text-slate-500'
+                  }`}>
+                    <ChevronUp size={20} strokeWidth={3} />
+                  </div>
+                </button>
+                
+                <div 
+                  className={`transition-all duration-500 ease-in-out overflow-hidden ${
+                    openIndex === index 
+                      ? "max-h-[500px] opacity-100" 
+                      : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <div className="px-8 md:px-12 pb-8 ml-12 border-l-2 border-purple-50">
+                    <p className="text-slate-500 text-base md:text-lg leading-relaxed font-medium">
                       {item.answer}
                     </p>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
 
-          {/* --- RIGHT COLUMN: Image & Graphics --- */}
-          {/* Mobile: Order 1 (Top), Desktop: Order 2 (Right) */}
-          <div className="order-1 lg:order-2 relative flex justify-center lg:justify-end mb-8 lg:mb-0">
-            <div className="relative w-full max-w-[350px] md:max-w-[450px] lg:max-w-[500px] mx-auto">
+          {/* RIGHT: Featured Visual */}
+          <div className="lg:col-span-5 lg:sticky lg:top-32">
+            <div className="relative group">
+              {/* Gold Aura Effect */}
+              <div className="absolute -inset-4 bg-gradient-to-tr from-[#bf953f] to-[#4c1d95] rounded-[4rem] opacity-20 blur-2xl group-hover:opacity-30 transition duration-1000"></div>
               
-              {/* SVG Graphic: Pink Sun (Top Left) */}
-              <div className="absolute -top-4 -left-4 md:-top-6 md:-left-8 z-0 scale-75 md:scale-100">
-                <svg width="60" height="60" viewBox="0 0 50 50" fill="none">
-                  <circle cx="25" cy="25" r="10" stroke="#FF00CC" strokeWidth="2.5" />
-                  <path d="M25 5L25 10M25 40L25 45M45 25L40 25M10 25L5 25M39.14 10.86L35.6 14.4M14.4 35.6L10.86 39.14M39.14 39.14L35.6 35.6M14.4 14.4L10.86 10.86" stroke="#FF00CC" strokeWidth="2.5" strokeLinecap="round" />
-                </svg>
-              </div>
-
-              {/* SVG Graphic: Teal Squiggle (Top Right) */}
-              <div className="absolute -top-8 -right-2 md:-top-12 md:-right-4 z-0 scale-75 md:scale-100">
-                <svg width="80" height="40" viewBox="0 0 100 40" fill="none">
-                  <path d="M5 25C15 5 25 35 35 25C45 15 55 35 65 25C75 15 85 35 95 20" stroke="#00CC99" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </div>
-
-              {/* Main Image */}
-              <div className="relative z-10 w-full h-auto">
-                {/* 
-                   Replace 'knight-think.png' with your actual image path.
-                   Make sure the image is in the /public folder of your Next.js project.
-                */}
-                <img 
-                  src="/knight-think.png" 
-                  alt="Cartoon Knight Thinking"
-                  className="w-full h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
-                />
+              <div className="relative bg-white p-4 rounded-[4rem] border border-white shadow-2xl overflow-hidden">
+                 <div className="relative h-[500px] md:h-[600px] w-full rounded-[3.2rem] overflow-hidden">
+                    <img 
+                      src="/faq.avif" 
+                      alt="Mandula Rajeev Coaching Session"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s]"
+                    />
+                    {/* Overlay with Professional Badges */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#4c1d95]/80 via-transparent to-transparent"></div>
+                    
+                    <div className="absolute bottom-8 left-8 right-8 space-y-4">
+                       <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20">
+                          <Award className="text-[#bf953f]" size={28} />
+                          <div>
+                             <p className="text-white font-black text-sm uppercase tracking-widest">Certified By</p>
+                             <p className="text-[#bf953f] font-bold text-xs">FIDE World Chess Federation</p>
+                          </div>
+                       </div>
+                       
+                       <div className="bg-white p-6 rounded-3xl shadow-xl">
+                          <div className="flex items-center gap-4 mb-3">
+                             <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                                <MessageSquare className="text-[#4c1d95]" size={20} />
+                             </div>
+                             <p className="font-black text-slate-900">Direct Support</p>
+                          </div>
+                          <p className="text-slate-500 text-sm font-medium mb-4">Have a specific question about your child's rating?</p>
+                          <a href="tel:+919030308811" className="block w-full text-center py-3 bg-[#4c1d95] text-white font-black text-xs uppercase tracking-[2px] rounded-xl hover:bg-[#3b1675] transition-colors">
+                            Call Coach Rajeev
+                          </a>
+                       </div>
+                    </div>
+                 </div>
               </div>
             </div>
           </div>
+
         </div>
       </div>
 
-      {/* --- FIXED FLOATING BUTTONS --- */}
-
-      {/* WhatsApp Chat Button (Optional - Uncomment if needed) */}
-      {/* <div className="fixed bottom-6 left-6 z-50 animate-bounce-slow">
-        <a 
-          href="https://wa.me/1234567890" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="bg-[#25D366] hover:bg-[#20b858] text-white px-4 py-3 rounded-full shadow-lg flex items-center gap-2 font-semibold transition-transform hover:scale-105"
-        >
-          <MessageCircle className="w-5 h-5 fill-white" />
-          <span className="hidden md:inline">Chat</span>
-        </a>
-      </div> */}
-
-      {/* Scroll to Top Button */}
-      <button 
-        onClick={scrollToTop}
-        className="fixed bottom-6 right-6 z-50 w-10 h-10 md:w-12 md:h-12 bg-[#5C4EE5] hover:bg-[#4a3ec2] rounded-full flex items-center justify-center shadow-lg transition-transform hover:-translate-y-1 active:scale-95"
-        aria-label="Scroll to top"
-      >
-        <ChevronDown className="w-5 h-5 md:w-6 md:h-6 text-white rotate-180" strokeWidth={2.5} />
-      </button>
 
     </section>
   );

@@ -6,6 +6,9 @@ import  FaqSection  from "@/components/stats-section"
 import  FeaturesSection  from "@/components/features-section"
 import AchievementsSection from "@/components/ui/AchievementsSection"
 import WhyChooseUsSection from "@/components/why-choose"
+import AboutUs from "@/components/aboutus"
+import Curriculum from "@/components/curriculum"
+import WhyChooseUs from "@/components/ui/whyus"
 
 
 export default function HomePage() {
@@ -13,9 +16,10 @@ export default function HomePage() {
     <div className="min-h-screen">
       <main>
         <HeroSection />
-        <WhyChooseUsSection/>
+        <AboutUs/>
+        <Curriculum/>
         <AchievementsSection/>
-        <CoursesSection />
+        <WhyChooseUs/>
         <TestimonialsSection />
         <FaqSection />
         <DemoBookingCTA />

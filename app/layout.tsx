@@ -5,20 +5,20 @@ import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import Header from "@/components/header"
-import { Footer } from "@/components/footer"
+import  Footer  from "@/components/footer"
 import { DemoProvider } from "@/context/DemoContext"
 import BookDemoModal from "@/components/BookDemoModal"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Checkmate Sensei Academy | Professional Chess Coaching for Kids",
+  title: "Rajeev International Chess Club | Professional Chess Coaching for Kids",
   description: "Nurturing young minds through strategic chess training. Founded by International Rated Coach Vivek Singh. Expert-led 1:1 and group classes for ages 6-16.",
-  keywords: ["Chess Academy Indirapuram", "Online Chess Classes", "Vivek Singh Chess", "Checkmate Sensei", "FIDE Rated Coaches"],
+  keywords: ["Chess Academy Indirapuram", "Online Chess Classes", "Vivek Singh Chess", "Rajeev International Chess Club", "FIDE Rated Coaches"],
   openGraph: {
-    title: "Checkmate Sensei Academy",
+    title: "Rajeev International Chess Club",
     description: "Transform your child into a strategic thinker. Book a free demo class today.",
-    url: "https://checkmatesensei.com",
-    siteName: "Checkmate Sensei Academy",
+    url: "https://rajeevinternationalchess.com",
+    siteName: "Rajeev International Chess Club",
     locale: "en_IN",
     type: "website",
   },
@@ -39,9 +39,9 @@ export default function RootLayout({
         {
           "@context": "https://schema.org",
           "@type": "SportsOrganization",
-          "name": "Checkmate Sensei Academy",
-          "url": "https://checkmatesensei.com",
-          "logo": "https://checkmatesensei.com/logo.png",
+          "name": "Rajeev International Chess Club",
+          "url": "https://rajeevinternationalchess.com",
+          "logo": "https://rajeevinternationalchess.com/logo.png",
           "founder": {
             "@type": "Person",
             "name": "Vivek Singh"
@@ -56,13 +56,13 @@ export default function RootLayout({
           },
           "contactPoint": {
             "@type": "ContactPoint",
-            "telephone": "+91-8130627389",
+            "telephone": "+91-9030308811",
             "contactType": "customer service",
-            "email": "checkmatesensei@gmail.com"
+            "email": "rajeevinternationalchessclub@gmail.com"
           },
           "sameAs": [
-            "https://www.facebook.com/checkmatesensei",
-            "https://www.instagram.com/checkmatesensei"
+            "https://www.facebook.com/rajeevinternationalchess",
+            "https://www.instagram.com/rajeevinternationalchess"
           ]
         }
         `}

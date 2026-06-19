@@ -1,175 +1,152 @@
 "use client";
 
-import React, { useRef } from 'react';
-import { ChevronLeft, ChevronRight, Crown, Trophy, Star, MapPin } from 'lucide-react';
+import React from 'react';
+import { Trophy, Star, ShieldCheck, Crown, ArrowUpRight, Medal } from 'lucide-react';
 
 interface Achiever {
   id: number;
   name: string;
-  country: string;
-  flag: string;
+  rating: string;
   image: string;
-  title: string;
+  achievement: string;
+  rank: string;
 }
 
 const achievers: Achiever[] = [
   {
     id: 1,
     name: "Paritosh Dhanaraju",
-    country: "India",
-    flag: "IN",
+    rating: "1775",
     image: "/paritosh.jpeg",
-    title: "Achieved a FIDE rating of 1775 in an International Chess Tournament",
+    achievement: "International Tournament Brilliance",
+    rank: "Elite"
   },
   {
     id: 2,
     name: "Manomay Sharma",
-    country: "India",
-    flag: "IN",
-    image: "manmoy.jpeg",
-    title: "Achieved a FIDE rating of 1617 in an International Chess Tournament",
+    rating: "1617",
+    image: "/manmoy.jpeg",
+    achievement: "Competitive Rated Performance",
+    rank: "Pro"
   },
   {
     id: 3,
     name: "Ivaan Bansal",
-    country: "India",
-    flag: "IN",
+    rating: "1600",
     image: "/ivaan.jpeg",
-    title: "Achieved a FIDE rating of 1600 through consistent rated tournament performances",
+    achievement: "Consistent Rated Progress",
+    rank: "Master"
   },
   {
     id: 4,
     name: "Atharv Singh",
-    country: "India",
-    flag: "IN",
+    rating: "1554",
     image: "/athar.jpeg",
-    title: "Achieved a FIDE rating of 1554, reflecting steady competitive improvement",
+    achievement: "Steady Competitive Rise",
+    rank: "Rising"
   }
 ];
 
 const AchievementsSection: React.FC = () => {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-
-  const scroll = (direction: 'left' | 'right') => {
-    if (scrollContainerRef.current) {
-      const scrollAmount = 340; // Card width + gap
-      const newScrollLeft = direction === 'left' 
-        ? scrollContainerRef.current.scrollLeft - scrollAmount 
-        : scrollContainerRef.current.scrollLeft + scrollAmount;
-      
-      scrollContainerRef.current.scrollTo({
-        left: newScrollLeft,
-        behavior: 'smooth'
-      });
-    }
-  };
+  const goldGradient = "from-[#bf953f] via-[#d4af37] to-[#b38728]";
 
   return (
-    <section className="relative py-16 lg:py-24 bg-slate-50 overflow-hidden font-sans">
-      
-      {/* --- Background Elements (Matching Hero Theme) --- */}
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 z-0 opacity-[0.03]" 
-           style={{ backgroundImage: 'radial-gradient(#4f46e5 1px, transparent 1px)', backgroundSize: '32px 32px' }}>
-      </div>
-      
-      {/* Abstract Blobs */}
-      <div className="absolute top-20 left-0 -translate-x-1/2 w-[400px] h-[400px] bg-indigo-200/40 rounded-full blur-3xl filter opacity-50 pointer-events-none"></div>
-      <div className="absolute bottom-20 right-0 translate-x-1/2 w-[300px] h-[300px] bg-violet-200/40 rounded-full blur-3xl filter opacity-50 pointer-events-none"></div>
-
-      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl relative z-10">
+    <section className="py-24 bg-slate-50 overflow-hidden font-sans">
+      <div className="max-w-[90rem] mx-auto px-4 md:px-8">
         
-        {/* --- Header --- */}
-        <div className="text-center mb-12 md:mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 text-xs font-bold text-indigo-700 bg-indigo-50 rounded-full border border-indigo-100 uppercase tracking-wider shadow-sm">
-            <Trophy className="w-3 h-3" />
-            Hall of Fame
+        {/* --- SECTION HEADER --- */}
+        <div className="flex flex-col lg:flex-row items-center lg:items-end justify-between mb-20 gap-8">
+          <div className="text-center lg:text-left space-y-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#4c1d95]/5 border border-[#4c1d95]/10">
+              <Trophy className="text-[#bf953f]" size={18} />
+              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#4c1d95]">
+                Tournament Hall of Fame
+              </span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-black text-slate-900 leading-none">
+              Elite <span className="text-[#4c1d95]">Performance</span>
+            </h2>
+            <p className="text-slate-500 text-lg font-medium max-w-xl">
+              Showcasing the FIDE-rated milestones achieved by our students under the mentorship of National Instructor Mandula Rajeev.
+            </p>
           </div>
-          
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight mb-4">
-            Winners At <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">Checkmate Sensei</span>
-          </h2>
-          
-          <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            Celebrating the brilliance and dedication of our top-performing students in tournaments around the globe.
-          </p>
+
+          <div className="flex items-center gap-6 bg-white p-6 rounded-[2rem] shadow-xl shadow-slate-200/50 border border-slate-100">
+             <div className="text-right">
+                <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Global Ranking</p>
+                <p className="text-2xl font-black text-slate-900 tracking-tight">Top 1% Academy</p>
+             </div>
+             <div className="w-14 h-14 bg-gradient-to-br from-[#4c1d95] to-purple-800 rounded-2xl flex items-center justify-center text-white shadow-lg">
+                <Crown size={28} />
+             </div>
+          </div>
         </div>
 
-        {/* --- Carousel Wrapper --- */}
-        <div className="relative group">
-          
-          {/* Navigation Buttons (Hidden on Mobile, Visible on Desktop) */}
-          <button 
-            onClick={() => scroll('left')}
-            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 z-20 w-12 h-12 bg-white rounded-full shadow-xl shadow-indigo-900/10 border border-slate-100 items-center justify-center text-slate-700 hover:text-indigo-600 hover:scale-110 transition-all duration-300"
-            aria-label="Scroll Left"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-          
-          <button 
-            onClick={() => scroll('right')}
-            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 z-20 w-12 h-12 bg-white rounded-full shadow-xl shadow-indigo-900/10 border border-slate-100 items-center justify-center text-slate-700 hover:text-indigo-600 hover:scale-110 transition-all duration-300"
-            aria-label="Scroll Right"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
-
-          {/* Scroll Container */}
-          <div 
-            ref={scrollContainerRef}
-            className="flex gap-4 md:gap-8 overflow-x-auto snap-x snap-mandatory pb-12 pt-4 px-4 -mx-4 md:mx-0 scrollbar-hide"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-          >
-            {achievers.map((person) => (
-              <div 
-                key={person.id}
-                className="snap-center shrink-0 w-[85vw] sm:w-[300px] md:w-[320px]"
-              >
-                <div className="relative h-[400px] md:h-[450px] rounded-[2rem] overflow-hidden bg-white shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:shadow-indigo-900/20 transition-all duration-500 group/card transform hover:-translate-y-2 border border-slate-100">
-                  
-                  {/* Image */}
-                  <img 
-                    src={person.image} 
-                    alt={person.name} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-110"
-                  />
-                  
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent opacity-80"></div>
-
-                  {/* Top Badge (Winner) */}
-                  <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm text-indigo-900 text-[10px] font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1.5 uppercase tracking-wide">
-                    <Crown className="w-3 h-3 text-yellow-500 fill-yellow-500" />
-                    Winner
+        {/* --- GRID LAYOUT --- */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {achievers.map((player) => (
+            <div 
+              key={player.id} 
+              className="group relative bg-white rounded-[3rem] p-4 shadow-[0_20px_50px_rgba(0,0,0,0.03)] border border-slate-100 hover:shadow-[0_40px_80px_rgba(76,29,149,0.12)] transition-all duration-500 flex flex-col"
+            >
+              {/* Image & Rank Badge */}
+              <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden mb-6 shadow-inner">
+                <img 
+                  src={player.image} 
+                  alt={player.name}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#4c1d95]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                
+                {/* Floating Rank Badge */}
+                <div className="absolute top-4 right-4">
+                  <div className="bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-2 shadow-xl border border-white/50">
+                    <Star className="text-[#bf953f] fill-[#bf953f]" size={12} />
+                    <span className="text-[10px] font-black text-[#4c1d95] uppercase tracking-tighter">
+                      {player.rank}
+                    </span>
                   </div>
-
-                  {/* Top Right (Flag) */}
-                  <div className="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-xl shadow-inner border border-white/30" title={person.country}>
-                    {person.flag}
-                  </div>
-
-                  {/* Bottom Info Card */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white translate-y-2 group-hover/card:translate-y-0 transition-transform duration-500">
-                    
-                    {/* Floating Title (Moves up on hover) */}
-                    <div className="bg-indigo-600/90 backdrop-blur-md inline-block px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider mb-2 shadow-lg">
-                      {person.title}
-                    </div>
-
-                    <h3 className="text-2xl font-bold mb-1 leading-tight">{person.name}</h3>
-                    
-                    <div className="flex items-center gap-2 text-slate-300 text-sm font-medium">
-                       <MapPin className="w-3.5 h-3.5" />
-                       {person.country}
-                    </div>
-                  </div>
-
                 </div>
               </div>
-            ))}
-          </div>
+
+              {/* Stats & Info */}
+              <div className="px-4 pb-4 space-y-4">
+                <div className="flex items-start justify-between">
+                  <div className="space-y-1">
+                    <h3 className="text-xl font-black text-slate-900 group-hover:text-[#4c1d95] transition-colors uppercase tracking-tight leading-none">
+                      {player.name}
+                    </h3>
+                    <p className="text-[11px] font-bold text-slate-400 italic">
+                      {player.achievement}
+                    </p>
+                  </div>
+                  <div className="p-2 rounded-lg bg-slate-50 text-slate-300 group-hover:text-[#bf953f] transition-colors">
+                    <ArrowUpRight size={20} />
+                  </div>
+                </div>
+
+                {/* Rating Bar Visual */}
+                <div className="relative bg-slate-50 p-4 rounded-2xl border border-slate-100 overflow-hidden">
+                   <div className="absolute top-0 left-0 w-1.5 h-full bg-[#bf953f]" />
+                   <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Official FIDE Rating</p>
+                   <div className="flex items-baseline gap-1">
+                     <span className={`text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r ${goldGradient}`}>
+                        {player.rating}
+                     </span>
+                     <span className="text-[10px] font-black text-[#4c1d95]">ELO</span>
+                   </div>
+                </div>
+              </div>
+
+              {/* Decorative "Seal of Excellence" on hover */}
+              <div className="absolute -bottom-2 -right-2 w-20 h-20 opacity-0 group-hover:opacity-10 transition-opacity rotate-12">
+                 <ShieldCheck size={80} className="text-[#4c1d95]" />
+              </div>
+            </div>
+          ))}
         </div>
+
+       
 
       </div>
     </section>
