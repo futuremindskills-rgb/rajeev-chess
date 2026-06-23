@@ -12,8 +12,8 @@ import "./globals.css"
 
 export const metadata: Metadata = {
   title: "Rajeev International Chess Club | Professional Chess Coaching for Kids",
-  description: "Nurturing young minds through strategic chess training. Founded by International Rated Coach Vivek Singh. Expert-led 1:1 and group classes for ages 6-16.",
-  keywords: ["Chess Academy Indirapuram", "Online Chess Classes", "Vivek Singh Chess", "Rajeev International Chess Club", "FIDE Rated Coaches"],
+  description: "Nurturing young minds through strategic chess training. Founded by International Rated Coach Rajeev Mandula. Expert-led 1:1 and group classes for ages 6-16.",
+  keywords: ["Chess Academy Indirapuram", "Online Chess Classes", "Rajeev Mandula Chess", "Rajeev International Chess Club", "FIDE Rated Coaches"],
   openGraph: {
     title: "Rajeev International Chess Club",
     description: "Transform your child into a strategic thinker. Book a free demo class today.",
@@ -44,14 +44,14 @@ export default function RootLayout({
           "logo": "https://rajeevinternationalchess.com/logo.png",
           "founder": {
             "@type": "Person",
-            "name": "Vivek Singh"
+            "name": "Rajeev Mandula"
           },
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "915A, Niti Khand I, Indirapuram",
-            "addressLocality": "Ghaziabad",
-            "addressRegion": "UP",
-            "postalCode": "201014",
+            "streetAddress": "Yes-J Centre, Loyola College,Beside Kaladarshini, JP Nagar,",
+            "addressLocality": "Vijaywada",
+            "addressRegion": "AP",
+            "postalCode": "520008",
             "addressCountry": "IN"
           },
           "contactPoint": {

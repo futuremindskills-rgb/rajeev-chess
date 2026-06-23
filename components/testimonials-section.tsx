@@ -78,7 +78,7 @@ export default function TestimonialsSection() {
             <Sparkles size={16} />
             Parent Testimonials
           </div>
-          <h2 className="text-4xl md:text-6xl font-black text-slate-900 leading-tight">
+          <h2 className="text-3xl md:text-5xl font-black text-slate-900 leading-tight">
             The Wall of <span className="text-[#4c1d95]">Champions</span>
           </h2>
           <p className="text-slate-500 text-lg md:text-xl font-medium max-w-2xl mx-auto">

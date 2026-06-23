@@ -58,9 +58,9 @@ const WhyChooseUs: React.FC = () => {
             
             <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-b-8 border-r-8 border-[#4c1d95]">
               <img
-                src="/gallery21.jpeg" // Use your high-res portrait here
+                src="/5.jpeg" // Use your high-res portrait here
                 alt="Mandula Rajeev - National Instructor"
-                className="w-full h-[550px] md:h-[650px] object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
+                className="w-full h-[550px] md:h-[650px] object-cover group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#050a18]/60 via-transparent to-transparent"></div>
               
@@ -82,7 +82,7 @@ const WhyChooseUs: React.FC = () => {
                 Why Choose Us
               </div>
 
-              <h2 className="text-4xl md:text-7xl font-black text-slate-900 leading-tight uppercase italic tracking-tighter">
+              <h2 className="text-3xl md:text-5xl font-black text-slate-900 leading-tight uppercase italic tracking-tighter">
                 The Strategic <span className="text-[#4c1d95]">Advantage</span>
               </h2>
 

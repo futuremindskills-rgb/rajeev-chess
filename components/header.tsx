@@ -26,11 +26,11 @@ const Header: React.FC = () => {
 
   const navItems: NavItem[] = [
     { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
     { name: "Curriculum", href: "/curriculum" },
     { name: "Achievement", href: "/achievements" },
     { name: "Gallery", href: "/gallery" },
     { name: "Blog", href: "/blogs" },
-    { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
 
