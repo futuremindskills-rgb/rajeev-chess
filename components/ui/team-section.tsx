@@ -51,7 +51,7 @@ const FounderSection: React.FC = () => {
                          <Crown className="w-5 h-5 md:w-6 md:h-6" />
                       </div>
                       <div>
-                         <p className="text-white font-black text-base md:text-lg leading-none uppercase italic">18+ Years</p>
+                         <p className="text-white font-black text-base md:text-lg leading-none uppercase italic">21+ Years</p>
                          <p className="text-[#bf953f] text-[8px] md:text-[10px] font-black uppercase tracking-widest mt-1">Coaching Legacy</p>
                       </div>
                    </div>

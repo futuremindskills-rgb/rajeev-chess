@@ -64,7 +64,7 @@ const AboutSection: React.FC = () => {
 
               <p className="text-slate-600 text-base md:text-xl font-medium leading-relaxed italic text-center lg:text-left">
                 "We don't just teach the game; we cultivate the discipline of a Grandmaster. At 
-                <span className="text-[#4c1d95] font-bold"> Rajeev International</span>, 18+ years of legacy 
+                <span className="text-[#4c1d95] font-bold"> Rajeev International</span>, 21+ years of legacy 
                 meets international FIDE standards."
               </p>
             </div>
@@ -86,7 +86,7 @@ const AboutSection: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-[9px] md:text-xs font-black text-slate-400 uppercase tracking-wider">Experience</p>
-                    <p className="text-base md:text-lg font-black text-slate-900 leading-none">18+ Years</p>
+                    <p className="text-base md:text-lg font-black text-slate-900 leading-none">21+ Years</p>
                   </div>
                </div>
             </div>

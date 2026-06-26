@@ -89,7 +89,7 @@ export default function BookDemoModal() {
               </div>
               
               {/* Heading: 3xl Mobile, 4xl+ Desktop */}
-              <h3 className="text-3xl lg:text-4xl xl:text-5xl font-black uppercase italic leading-[1.1] tracking-tighter">
+              <h3 className="text-3xl lg:text-4xl xl:text-4xl font-black uppercase italic leading-[1.1] tracking-tighter">
                 Start Your <br className="hidden md:block" />
                 <span className="text-[#bf953f]">Grandmaster</span> <br className="hidden md:block" />
                 Journey

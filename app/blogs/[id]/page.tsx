@@ -94,7 +94,7 @@ export default function BlogDetail({
 
              <p>
                 Our coaching at <span className="text-[#4c1d95] font-bold">Rajeev International Chess Club</span> 
-                is built on the foundation of 18+ years of legacy. Each lesson is designed 
+                is built on the foundation of 21+ years of legacy. Each lesson is designed 
                 to translate theoretical knowledge into tournament-winning moves.
              </p>
 

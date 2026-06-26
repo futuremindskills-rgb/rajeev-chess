@@ -9,6 +9,7 @@ import WhyChooseUsSection from "@/components/why-choose"
 import AboutUs from "@/components/aboutus"
 import Curriculum from "@/components/curriculum"
 import WhyChooseUs from "@/components/ui/whyus"
+import PatronTribute from "@/components/patron"
 
 
 export default function HomePage() {
@@ -20,6 +21,7 @@ export default function HomePage() {
         <Curriculum/>
         <AchievementsSection/>
         <WhyChooseUs/>
+        <PatronTribute/>
         <TestimonialsSection />
         <FaqSection />
         <DemoBookingCTA />

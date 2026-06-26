@@ -124,7 +124,7 @@ const AchievementBanner: React.FC = () => {
               </div>
               <div>
                  <p className="text-[8px] md:text-[9px] font-black uppercase tracking-widest text-slate-400">Experience</p>
-                 <p className="font-black text-[10px] md:text-xs uppercase leading-tight">18+ Years Legacy</p>
+                 <p className="font-black text-[10px] md:text-xs uppercase leading-tight">21+ Years Legacy</p>
               </div>
            </div>
 

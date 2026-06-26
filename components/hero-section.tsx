@@ -26,7 +26,7 @@ export default function HeroSection() {
   const purpleGradient = "from-[#2e1065] to-[#4c1d95]";
 
   return (
-    <section className="relative min-h-screen bg-[#fafafa] flex items-center pt-24 pb-16 lg:pt-32 lg:pb-20 overflow-hidden font-sans">
+    <section className="relative min-h-screen bg-[#fafafa] flex items-center pt-24 pb-16 lg:pt-22 lg:pb-20 overflow-hidden font-sans">
       
       {/* --- ELITE BACKGROUND ELEMENTS --- */}
       <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
@@ -61,20 +61,20 @@ export default function HeroSection() {
                <h2 className="text-purple-700 font-extrabold tracking-[0.15em] uppercase text-xs md:text-base">
                  Led by National Instructor Mandula Rajeev
                </h2>
-               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-slate-900 leading-[1.1] md:leading-[0.95] tracking-tight">
+               <h1 className="text-4xl sm:text-5xl lg:text-5xl xl:text-5xl font-black text-slate-900 leading-[1.1] md:leading-[0.95] tracking-tight">
                  Elevate Your Game with <br className="hidden sm:block"/>
                  <span className={`text-transparent bg-clip-text bg-gradient-to-r ${goldGradient}`}>World Class</span> Coaching
                </h1>
             </div>
 
             <p className="text-slate-600 text-base md:text-xl max-w-2xl mx-auto lg:mx-0 font-medium leading-relaxed">
-              Founded by a <span className="text-purple-800 font-bold">FIDE Arbiter</span> & <span className="text-purple-800 font-bold">National Instructor</span> with 18+ years of legacy coaching at Andhra Loyola, DPS, and 1000+ tournaments.
+              Founded by a <span className="text-purple-800 font-bold">FIDE Arbiter</span> & <span className="text-purple-800 font-bold">National Instructor</span> with 21+ years of legacy coaching at Andhra Loyola, DPS, and 1000+ tournaments.
             </p>
 
             {/* STRATEGIC STATS GRID */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 md:gap-6 pt-2">
                {[
-                 { label: "Experience", val: "18+ Yrs", icon: Award },
+                 { label: "Experience", val: "21+ Yrs", icon: Award },
                  { label: "Tournaments", val: "1000+", icon: Trophy },
                  { label: "Title", val: "NI '22", icon: Crown },
                  { label: "Schools", val: "15+", icon: BookOpen },
@@ -121,7 +121,7 @@ export default function HeroSection() {
               {/* Outer Golden Aura */}
               <div className="absolute -inset-4 bg-gradient-to-r from-amber-200 via-purple-100 to-amber-200 rounded-[2.5rem] md:rounded-[4rem] opacity-30 blur-2xl animate-pulse"></div>
               
-              <div className="relative bg-white p-2 md:p-4 rounded-[2.5rem] md:rounded-[4rem] shadow-[0_50px_100px_rgba(76,29,149,0.1)] border border-white overflow-hidden group">
+              <div className="bottom-20 relative bg-white p-2 md:p-4 rounded-[2.5rem] md:rounded-[4rem] shadow-[0_50px_100px_rgba(76,29,149,0.1)] border border-white overflow-hidden group">
                  <div className="relative h-[300px] sm:h-[450px] lg:h-[500px] w-full rounded-[2rem] md:rounded-[3.2rem] overflow-hidden">
                     <img 
                       src="20.jpeg" 

@@ -53,7 +53,7 @@ const AboutUs: React.FC = () => {
                 </h2>
 
                 <p className="text-slate-600 text-base md:text-lg leading-relaxed max-w-xl">
-                  Led by National Instructor <strong>Mandula Rajeev</strong> (FIDE 1829), we provide more than just lessons. With 18+ years of experience across premier institutions, we craft the discipline and mental fortitude required for success.
+                  Led by National Instructor <strong>Mandula Rajeev</strong> (FIDE 1829), we provide more than just lessons. With 21+ years of experience across premier institutions, we craft the discipline and mental fortitude required for success.
                 </p>
               </div>
 

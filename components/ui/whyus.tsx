@@ -19,7 +19,7 @@ const WhyChooseUs: React.FC = () => {
       icon: ShieldCheck,
     },
     {
-      title: "Proven 18+ Year Legacy",
+      title: "Proven 21+ Year Legacy",
       desc: "Official coach for Andhra Loyola & DPS with a decades-long success record.",
       icon: Clock,
     },

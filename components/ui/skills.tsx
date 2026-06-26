@@ -27,7 +27,7 @@ export default function SkillOutcomesSection() {
     },
     {
       title: 'Strategic Foresight',
-      description: 'Training students to think 5-10 moves ahead, a skill mastered by Coach Rajeev over 18+ years.',
+      description: 'Training students to think 5-10 moves ahead, a skill mastered by Coach Rajeev over 21+ years.',
       icon: <Target className="w-8 h-8" />,
       color: 'bg-amber-50',
       milestones: ['Prophylactic Thinking', 'Resource Management', 'Positional Depth', 'Risk Evaluation'],
@@ -194,7 +194,7 @@ export default function SkillOutcomesSection() {
               <p className="text-[10px] text-slate-500 font-bold uppercase">Official Arbiter Experience</p>
             </div>
             <div className="space-y-2 last:border-0">
-              <p className="text-5xl font-black text-[#bf953f] italic">18+</p>
+              <p className="text-5xl font-black text-[#bf953f] italic">21+</p>
               <p className="text-purple-200 font-black text-xs uppercase tracking-widest">Years of Legacy</p>
               <p className="text-[10px] text-slate-500 font-bold uppercase">From Loyola to National Pro</p>
             </div>

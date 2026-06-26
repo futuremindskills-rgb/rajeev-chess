@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
   Phone,
   Mail,
@@ -12,7 +12,8 @@ import {
   Star,
   Moon,
   ChevronRight,
-  ShieldCheck
+  ShieldCheck,
+  Clock
 } from "lucide-react";
 
 export default function Footer() {
@@ -30,29 +31,46 @@ export default function Footer() {
     { name: "Book a Demo", href: "/bookdemo" },
   ];
 
+  const branches = [
+    {
+      name: "Yes-J Center",
+      time: "06:00 AM - 07:30 AM",
+      days: "Daily Morning Batch",
+    },
+    {
+      name: "Popular Center",
+      time: "04:00 PM - 05:25 PM",
+      days: "Monday to Thursday",
+    },
+    {
+      name: "Birla Open Minds",
+      time: "Weekend Special",
+      days: "Saturday & Sundays",
+    },
+    {
+      name: "Fun Times Club",
+      time: "05:30 PM - 08:00 PM",
+      days: "Monday to Thursday",
+    },
+    {
+      name: "Bhavanipuram & Ibrahimpatnam",
+      time: "04:00 PM - 07:30 PM",
+      days: "Saturday & Sunday",
+    },
+  ];
+
   return (
     <footer className="relative bg-[#050a18] text-white overflow-hidden font-sans border-t border-white/5">
       
-      {/* =======================
-          BACKGROUND DECORATION 
-         ======================= */}
-      
-      {/* Subtle Glows */}
+      {/* Background Decor */}
       <div className="absolute top-0 left-1/4 w-64 h-64 md:w-[500px] md:h-[500px] bg-purple-600/10 rounded-full blur-[80px] md:blur-[120px] pointer-events-none"></div>
       <div className="absolute bottom-0 right-1/4 w-48 h-48 md:w-[400px] md:h-[400px] bg-[#bf953f]/5 rounded-full blur-[60px] md:blur-[100px] pointer-events-none"></div>
 
-      {/* Twinkling Stars Effect - Hidden/Reduced on small screens */}
-      <div className="absolute inset-0 opacity-20 pointer-events-none">
-        <Star className="absolute top-20 left-[10%] text-white animate-pulse w-2 h-2 md:w-3 md:h-3" fill="currentColor" />
-        <Star className="absolute top-40 right-[15%] text-[#bf953f] animate-pulse delay-700 w-1.5 h-1.5 md:w-2 md:h-2" fill="currentColor" />
-        <Star className="hidden md:block absolute bottom-32 left-[40%] text-white animate-pulse delay-300 w-3 h-3" fill="currentColor" />
-        <Moon className="absolute top-10 right-10 md:top-20 md:right-20 text-white/5 rotate-12 w-8 h-8 md:w-10 md:h-10" fill="currentColor" />
-      </div>
-
       <div className="relative z-10 container mx-auto px-6 md:px-12 pt-16 md:pt-20 pb-12 max-w-[90rem]">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
+        
+        {/* --- TOP SECTION: LINKS & BRAND --- */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-16">
           
-          {/* --- BRAND SECTION --- */}
           <div className="space-y-6 md:space-y-8">
             <div className="flex items-center gap-4">
                <div className="relative group">
@@ -62,15 +80,13 @@ export default function Footer() {
                   </div>
                </div>
                <div>
-                  <h3 className="text-lg md:text-xl font-black text-white leading-none tracking-tight">RAJEEV</h3>
+                  <h3 className="text-lg md:text-xl font-black text-white leading-none tracking-tight uppercase">Rajeev</h3>
                   <p className="text-[9px] md:text-[10px] font-black text-[#bf953f] tracking-[0.2em] uppercase mt-1">International Chess Club</p>
                </div>
             </div>
-
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
-              Empowering the next generation of Grandmasters through FIDE-certified excellence and a legacy of 18+ years in strategic coaching.
+              Empowering the next generation of Grandmasters through FIDE-certified excellence and a legacy of 21+ years.
             </p>
-
             <div className="flex gap-4">
                 {[Facebook, Instagram].map((Icon, i) => (
                   <a key={i} href="#" className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-slate-400 hover:bg-[#bf953f] hover:text-[#050a18] transition-all duration-300">
@@ -80,11 +96,9 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* --- QUICK LINKS --- */}
           <div className="sm:pl-4">
              <h4 className="text-xs md:text-sm font-black text-white uppercase tracking-[0.2em] mb-6 md:mb-8 flex items-center gap-2">
-               <span className="w-6 h-[2px] bg-[#bf953f]"></span>
-               Navigation
+               <span className="w-6 h-[2px] bg-[#bf953f]"></span> Navigation
              </h4>
              <ul className="space-y-3 md:space-y-4">
                 {usefulLinks.map(link => (
@@ -98,11 +112,9 @@ export default function Footer() {
              </ul>
           </div>
 
-          {/* --- ACADEMY LINKS --- */}
           <div className="sm:pl-4">
              <h4 className="text-xs md:text-sm font-black text-white uppercase tracking-[0.2em] mb-6 md:mb-8 flex items-center gap-2">
-               <span className="w-6 h-[2px] bg-purple-500"></span>
-               Academy
+               <span className="w-6 h-[2px] bg-purple-500"></span> Academy
              </h4>
              <ul className="space-y-3 md:space-y-4">
                 {academyLinks.map(link => (
@@ -116,44 +128,61 @@ export default function Footer() {
              </ul>
           </div>
 
-          {/* --- CONTACT & ADDRESS --- */}
           <div className="space-y-6 md:space-y-8">
-             <h4 className="text-xs md:text-sm font-black text-white uppercase tracking-[0.2em] mb-2 flex items-center gap-2">
-               <span className="w-6 h-[2px] bg-blue-500"></span>
-               Contact
+             <h4 className="text-xs md:text-sm font-black text-white uppercase tracking-[0.2em] mb-6 md:mb-8 flex items-center gap-2">
+               <span className="w-6 h-[2px] bg-blue-500"></span> Contact
              </h4>
-             
              <div className="space-y-4">
                <a href="tel:+919030308811" className="flex items-center gap-4 group">
                   <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-[#bf953f] group-hover:bg-[#bf953f] group-hover:text-[#050a18] transition-all shrink-0">
                      <Phone className="w-4 h-4" />
                   </div>
-                  <span className="text-slate-300 text-sm font-bold group-hover:text-white transition-colors">+91 90303 08811</span>
+                  <span className="text-slate-300 text-sm font-bold">+91 90303 08811</span>
                </a>
                <a href="mailto:rajeevinternationalchessclub@gmail.com" className="flex items-center gap-4 group">
                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-[#bf953f] group-hover:bg-[#bf953f] group-hover:text-[#050a18] transition-all shrink-0">
                      <Mail className="w-4 h-4" />
                   </div>
-                  <span className="text-slate-300 text-sm font-bold truncate max-w-[200px] sm:max-w-none group-hover:text-white transition-colors">rajeevinternationalchessclub@gmail.com</span>
+                  <span className="text-slate-300 text-sm font-bold truncate max-w-[180px] sm:max-w-none">rajeevinternationalchessclub@gmail.com</span>
                </a>
-             </div>
-             
-             <div className="bg-white/5 p-5 rounded-2xl border border-white/10 flex items-start gap-4">
-                <MapPin className="text-[#bf953f] shrink-0 mt-1 w-5 h-5" />
-                <p className="text-[11px] md:text-xs text-slate-400 leading-relaxed">
-                    <span className="font-black text-white block mb-1 uppercase tracking-wider">Vijayawada Center</span>
-                    Yes-J Centre, Loyola College, <br />
-                    Beside Kaladarshini, JP Nagar, <br />
-                    Vijayawada, AP 520008
-                </p>
              </div>
           </div>
         </div>
+
+        {/* --- BRANCHES & TIMINGS SECTION --- */}
+        <div className="pt-12 border-t border-white/5">
+           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10">
+              <div className="space-y-1">
+                <h4 className="text-sm md:text-base font-black text-white uppercase tracking-[0.2em] flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-[#bf953f]" /> Training Centers & Timings
+                </h4>
+                <p className="text-[10px] md:text-xs text-[#bf953f] font-bold uppercase tracking-widest pl-6">NTR District, Andhra Pradesh</p>
+              </div>
+           </div>
+
+           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+              {branches.map((branch, idx) => (
+                <div key={idx} className="bg-white/[0.03] border border-white/5 p-5 rounded-2xl hover:bg-white/[0.06] transition-all group">
+                   <h5 className="text-[#bf953f] font-black text-xs uppercase tracking-wider mb-3 leading-tight group-hover:text-white transition-colors">
+                     {branch.name}
+                   </h5>
+                   <div className="space-y-2">
+                      <div className="flex items-center gap-2 text-slate-300">
+                         <Clock className="w-3.5 h-3.5 text-purple-500" />
+                         <span className="text-[11px] font-bold">{branch.time}</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-slate-500">
+                         <ShieldCheck className="w-3.5 h-3.5" />
+                         <span className="text-[10px] font-bold uppercase tracking-tighter">{branch.days}</span>
+                      </div>
+                   </div>
+                </div>
+              ))}
+           </div>
+        </div>
       </div>
 
-      {/* =======================
-          BOTTOM BAR 
-         ======================= */}
+      {/* --- BOTTOM BAR --- */}
       <div className="border-t border-white/5 bg-[#030712]">
         <div className="container mx-auto px-6 py-8 max-w-[90rem]">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
@@ -163,33 +192,20 @@ export default function Footer() {
                 </p>
                 <p className="text-[9px] md:text-[10px] text-slate-600 font-bold uppercase tracking-[0.2em]">
                     Designed by{" "}
-                    <a 
-                        href="https://wa.me/917851988964" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-[#bf953f] hover:text-white transition-colors"
-                    >
-                        jinesh mehta
-                    </a>
+                    <a href="https://wa.me/917851988964" target="_blank" rel="noopener noreferrer" className="text-[#bf953f] hover:text-white transition-colors">jinesh mehta</a>
                 </p>
               </div>
-              
               <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
                   <div className="flex items-center gap-2 text-slate-500 text-[9px] md:text-[10px] font-black uppercase tracking-widest">
                     <ShieldCheck className="text-[#bf953f] w-3.5 h-3.5" />
                     FIDE Certified Academy
-                  </div>
-                  <div className="hidden md:block h-4 w-[1px] bg-white/10"></div>
-                  <div className="flex gap-4 md:gap-6 text-[9px] md:text-[10px] text-slate-500 font-black uppercase tracking-widest">
-                     <a href="#" className="hover:text-white transition-colors">Privacy</a>
-                     <a href="#" className="hover:text-white transition-colors">Terms</a>
                   </div>
               </div>
             </div>
         </div>
       </div>
 
-      {/* WhatsApp Floating Action - Adjusted for mobile visibility */}
+      {/* WhatsApp Floating Action */}
       <a
          href="https://wa.me/919030308811"
          target="_blank"

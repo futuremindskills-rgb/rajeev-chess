@@ -17,7 +17,7 @@ const faqData = [
   {
     question: "What makes the Academy unique?",
     answer:
-      "We bring 18+ years of legacy coaching from top institutions like Andhra Loyola and DPS. As a Joint Secretary of the Andhra Chess Association, Coach Rajeev provides students with exclusive tournament pathways.",
+      "We bring 21+ years of legacy coaching from top institutions like Andhra Loyola and DPS. As a Joint Secretary of the Andhra Chess Association, Coach Rajeev provides students with exclusive tournament pathways.",
   },
   {
     question: "Is there a certificate provided?",

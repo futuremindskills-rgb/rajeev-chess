@@ -71,7 +71,7 @@ const CoachAchievements: React.FC = () => {
           </h2>
           <p className="text-slate-500 text-lg md:text-xl font-medium max-w-2xl mx-auto">
             Explore the professional milestones of Mandula Rajeev—an International 
-            Rated Player and National Instructor with a 18+ year coaching legacy.
+            Rated Player and National Instructor with a 21+ year coaching legacy.
           </p>
         </div>
 
@@ -142,7 +142,7 @@ const CoachAchievements: React.FC = () => {
               <div className="h-[1px] w-full lg:w-[1px] lg:h-20 bg-white/10"></div>
 
               <div className="text-center lg:text-right">
-                 <p className="text-white font-black text-4xl italic">18+</p>
+                 <p className="text-white font-black text-4xl italic">21+</p>
                  <p className="text-slate-500 font-black text-[10px] uppercase tracking-widest mt-1">Years of Coaching Legacy</p>
                  <div className="mt-4 flex gap-2 justify-center lg:justify-end">
                     {[...Array(5)].map((_, i) => <Star key={i} size={12} fill="#bf953f" className="text-[#bf953f]" />)}

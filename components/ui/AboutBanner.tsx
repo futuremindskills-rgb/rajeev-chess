@@ -48,7 +48,7 @@ const AboutBanner: React.FC = () => {
 
               {/* Description */}
               <p className="text-slate-500 text-sm md:text-base leading-relaxed font-medium max-w-sm italic">
-                "Led by FIDE National Instructor Mandula Rajeev, we have spent 18+ years 
+                "Led by FIDE National Instructor Mandula Rajeev, we have spent 21+ years 
                 transforming students into international rated players."
               </p>
 

@@ -1,5 +1,6 @@
 import DemoBookingCTA from "@/components/demo-booking-cta";
 import FaqSection from "@/components/stats-section";
+import TrainingCenters from "@/components/training";
 import ContactBanner from "@/components/ui/ContactBanner";
 import ContactSection from "@/components/ui/ContactSection";
 export default function ContactPage() {
@@ -7,7 +8,11 @@ export default function ContactPage() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 py-14">
       <ContactBanner />
       <ContactSection />
+      <section id="branches" >
+      <TrainingCenters/>
+      </section>
       <FaqSection />
+
       <DemoBookingCTA />
     </div>
   );

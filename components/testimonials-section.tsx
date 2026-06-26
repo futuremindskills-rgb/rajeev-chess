@@ -32,7 +32,7 @@ const testimonials = [
     image: "https://i.pravatar.cc/150?u=parent3", 
     name: "Ravi Teja",
     role: "Father of Senior Student",
-    text: "We chose Rajeev sir because of his 18+ years of legacy at Andhra Loyola. His teaching methodology is structured and disciplined. It's not just about the game; it's about building character and focus.",
+    text: "We chose Rajeev sir because of his 21+ years of legacy at Andhra Loyola. His teaching methodology is structured and disciplined. It's not just about the game; it's about building character and focus.",
     rating: 5
   },
   {

@@ -61,7 +61,7 @@ const CurriculumBanner: React.FC = () => {
 
               {/* Description */}
               <p className="text-slate-500 text-sm md:text-lg leading-relaxed font-medium max-w-sm md:max-w-md">
-                A FIDE-certified curriculum spanning from <span className="text-slate-900 font-bold italic">Foundations</span> to <span className="text-slate-900 font-bold italic">Elite Mastery</span>. Built on 18+ years of coaching success.
+                A FIDE-certified curriculum spanning from <span className="text-slate-900 font-bold italic">Foundations</span> to <span className="text-slate-900 font-bold italic">Elite Mastery</span>. Built on 21+ years of coaching success.
               </p>
 
               {/* Bottom Footer Section: Socials & Rating */}
