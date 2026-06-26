@@ -10,6 +10,7 @@ import DemoBookingCTA from "@/components/demo-booking-cta";
 import MissionVision from "@/components/mission";
 import WhyChessMatters from "@/components/why";
 import CoachingPhilosophy from "@/components/phil";
+import CertificationSection from "@/components/mandula";
 
 export default function AboutPage() {
   return (
@@ -18,6 +19,7 @@ export default function AboutPage() {
       <AboutSection />
       <MissionVision/>
       <TeamSection />
+      <CertificationSection/>
       <WhyChessMatters/>
       <CoachingPhilosophy/>
       <FaqSection />
